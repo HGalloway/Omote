@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         if (Loggedin == null) {
             Button SignUp = (Button) findViewById(R.id.SignUp);
             SignUp.setOnClickListener(v -> {
-                Intent intent = new Intent(this, SignUp.class);
+                Intent intent = new Intent(this, CharacterCreation.class);
                 startActivity(intent);
 
             });

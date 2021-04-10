@@ -3,6 +3,7 @@ package com.example.octopusapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -48,8 +49,8 @@ public class SignUp extends AppCompatActivity {
                 UserDatabase.child(UsernameInput.getText().toString()).child("Username").setValue(UsernameInput.getText().toString());
                 UserDatabase.child(UsernameInput.getText().toString()).child("Password").setValue(BCrypt.hashpw(PasswordInput.getText().toString(), BCrypt.gensalt()));
                 Messages.OutputCompletionMessage(0, Context);
-                //Intent intent = new Intent(this, CharacterCreation.class);
-                //startActivity(intent);
+                Intent intent = new Intent(this, CharacterCreation.class);
+                startActivity(intent);
             }
 
 
