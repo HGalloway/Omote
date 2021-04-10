@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OctopusApplication">
-        <activity android:name=".Login"></activity>
+        <activity android:name=".CharacterCreation"></activity>
+        <activity android:name=".Login" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity">
             <intent-filter>

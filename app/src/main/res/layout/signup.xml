@@ -51,14 +51,14 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/UsernameInput"
+        app:layout_constraintBottom_toTopOf="@+id/UsernameInputL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailInput" />
 
     <EditText
-        android:id="@+id/UsernameInput"
+        android:id="@+id/UsernameInputL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"

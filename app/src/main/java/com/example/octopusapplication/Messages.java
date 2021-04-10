@@ -18,4 +18,9 @@ public class Messages {
         Toast toast = Toast.makeText(ApplicationContext, ToastText[MessageIndex], ToastDuration);
         toast.show();
     }
+    public void OutputCompletionMessage(String Message, Context ApplicationContext) {
+        int ToastDuration = Toast.LENGTH_LONG;
+        Toast toast = Toast.makeText(ApplicationContext, Message, ToastDuration);
+        toast.show();
+    }
 }

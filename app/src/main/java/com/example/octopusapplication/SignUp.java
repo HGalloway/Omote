@@ -6,7 +6,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -26,7 +25,7 @@ public class SignUp extends AppCompatActivity {
         SignUp.setOnClickListener (v -> {
             TextView EmailInput = (TextView) findViewById(R.id.EmailInput);
             TextView PasswordInput = (TextView) findViewById(R.id.PasswordInput);
-            TextView UsernameInput = (TextView) findViewById(R.id.UsernameInput);
+            TextView UsernameInput = (TextView) findViewById(R.id.UsernameInputL);
             Messages Messages = new Messages();
             Context Context = getApplicationContext();
 
@@ -47,11 +46,12 @@ public class SignUp extends AppCompatActivity {
                 UserDatabase.child(UsernameInput.getText().toString());
                 UserDatabase.child(UsernameInput.getText().toString()).child("Email").setValue(EmailInput.getText().toString());
                 UserDatabase.child(UsernameInput.getText().toString()).child("Username").setValue(UsernameInput.getText().toString());
-                UserDatabase.child(UsernameInput.getText().toString()).child("Password").setValue(PasswordInput.getText().toString());
+                UserDatabase.child(UsernameInput.getText().toString()).child("Password").setValue(BCrypt.hashpw(PasswordInput.getText().toString(), BCrypt.gensalt()));
                 Messages.OutputCompletionMessage(0, Context);
                 //Intent intent = new Intent(this, CharacterCreation.class);
                 //startActivity(intent);
             }
+
 
         });
     }
