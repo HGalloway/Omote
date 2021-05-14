@@ -1,45 +1,45 @@
-com/example/octopusapplication/About.java
- com.example.octopusapplication.About
-com/example/octopusapplication/CharacterCreation.java
- com.example.octopusapplication.CharacterCreation
-com/example/octopusapplication/BCrypt.java
- com.example.octopusapplication.BCrypt
-com/example/octopusapplication/NotificationHandler.java
- com.example.octopusapplication.NotificationHandler
- com.example.octopusapplication.NotificationHandler$1
-com/example/octopusapplication/ColorListAdapter.java
- com.example.octopusapplication.ColorListAdapter
- com.example.octopusapplication.ColorListAdapter$1
-com/example/octopusapplication/Login.java
- com.example.octopusapplication.Login
- com.example.octopusapplication.Login$1
- com.example.octopusapplication.Login$2
-com/example/octopusapplication/SignUp.java
- com.example.octopusapplication.SignUp
-com/example/octopusapplication/Friends.java
- com.example.octopusapplication.Friends
-com/example/octopusapplication/BuildConfig.java
- com.example.octopusapplication.BuildConfig
-com/example/octopusapplication/AddFriend.java
- com.example.octopusapplication.AddFriend
- com.example.octopusapplication.AddFriend$1
- com.example.octopusapplication.AddFriend$2
- com.example.octopusapplication.AddFriend$3
-com/example/octopusapplication/Messages.java
- com.example.octopusapplication.Messages
-com/example/octopusapplication/Profile.java
- com.example.octopusapplication.Profile
-com/example/octopusapplication/MoodAndColor.java
- com.example.octopusapplication.MoodAndColor
-com/example/octopusapplication/MainActivity.java
- com.example.octopusapplication.MainActivity
-com/example/octopusapplication/JSONHandler.java
- com.example.octopusapplication.JSONHandler
-com/example/octopusapplication/Main.java
- com.example.octopusapplication.Main
- com.example.octopusapplication.Main$1
- com.example.octopusapplication.Main$2
- com.example.octopusapplication.Main$3
- com.example.octopusapplication.Main$4
- com.example.octopusapplication.Main$5
- com.example.octopusapplication.Main$5$1
+com/OctoApp/Octo/About.java
+ com.OctoApp.Octo.About
+com/OctoApp/Octo/Messages.java
+ com.OctoApp.Octo.Messages
+com/OctoApp/Octo/CharacterCreation.java
+ com.OctoApp.Octo.CharacterCreation
+com/OctoApp/Octo/MoodAndColor.java
+ com.OctoApp.Octo.MoodAndColor
+com/OctoApp/Octo/JSONHandler.java
+ com.OctoApp.Octo.JSONHandler
+com/OctoApp/Octo/MainActivity.java
+ com.OctoApp.Octo.MainActivity
+com/OctoApp/Octo/BCrypt.java
+ com.OctoApp.Octo.BCrypt
+com/OctoApp/Octo/AddFriend.java
+ com.OctoApp.Octo.AddFriend
+ com.OctoApp.Octo.AddFriend$1
+ com.OctoApp.Octo.AddFriend$2
+ com.OctoApp.Octo.AddFriend$3
+com/OctoApp/Octo/Login.java
+ com.OctoApp.Octo.Login
+ com.OctoApp.Octo.Login$1
+ com.OctoApp.Octo.Login$2
+com/OctoApp/Octo/BuildConfig.java
+ com.OctoApp.Octo.BuildConfig
+com/OctoApp/Octo/ColorListAdapter.java
+ com.OctoApp.Octo.ColorListAdapter
+ com.OctoApp.Octo.ColorListAdapter$1
+com/OctoApp/Octo/NotificationHandler.java
+ com.OctoApp.Octo.NotificationHandler
+ com.OctoApp.Octo.NotificationHandler$1
+com/OctoApp/Octo/Friends.java
+ com.OctoApp.Octo.Friends
+com/OctoApp/Octo/SignUp.java
+ com.OctoApp.Octo.SignUp
+com/OctoApp/Octo/Profile.java
+ com.OctoApp.Octo.Profile
+com/OctoApp/Octo/Main.java
+ com.OctoApp.Octo.Main
+ com.OctoApp.Octo.Main$1
+ com.OctoApp.Octo.Main$2
+ com.OctoApp.Octo.Main$3
+ com.OctoApp.Octo.Main$4
+ com.OctoApp.Octo.Main$5
+ com.OctoApp.Octo.Main$5$1

@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.octopusapplication",
+  "applicationId": "com.OctoApp.Octo",
   "variantName": "debug",
   "elements": [
     {

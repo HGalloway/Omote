@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.octopusapplication"
+    package="com.OctoApp.Octo"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -28,15 +28,15 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.OctopusApplication" >
-        <activity android:name="com.example.octopusapplication.AddFriend" />
-        <activity android:name="com.example.octopusapplication.Friends" />
-        <activity android:name="com.example.octopusapplication.Profile" />
-        <activity android:name="com.example.octopusapplication.About" />
-        <activity android:name="com.example.octopusapplication.Main" />
-        <activity android:name="com.example.octopusapplication.CharacterCreation" />
-        <activity android:name="com.example.octopusapplication.Login" />
-        <activity android:name="com.example.octopusapplication.SignUp" />
-        <activity android:name="com.example.octopusapplication.MainActivity" >
+        <activity android:name="com.OctoApp.Octo.AddFriend" />
+        <activity android:name="com.OctoApp.Octo.Friends" />
+        <activity android:name="com.OctoApp.Octo.Profile" />
+        <activity android:name="com.OctoApp.Octo.About" />
+        <activity android:name="com.OctoApp.Octo.Main" />
+        <activity android:name="com.OctoApp.Octo.CharacterCreation" />
+        <activity android:name="com.OctoApp.Octo.Login" />
+        <activity android:name="com.OctoApp.Octo.SignUp" />
+        <activity android:name="com.OctoApp.Octo.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -111,7 +111,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.example.octopusapplication.firebaseinitprovider"
+            android:authorities="com.OctoApp.Octo.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />

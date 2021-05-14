@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.octopusapplication",
+  "applicationId": "com.OctoApp.Octo",
   "variantName": "processDebugResources",
   "elements": [
     {
