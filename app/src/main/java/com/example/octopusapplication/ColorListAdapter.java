@@ -1,6 +1,8 @@
 package com.example.octopusapplication;
 
 import android.content.Context;
+import android.hardware.usb.UsbRequest;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,46 +29,85 @@ import static com.example.octopusapplication.R.*;
 public class ColorListAdapter extends ArrayAdapter {
     private Context Context;
     private List<MoodAndColor> MoodList;
+    private DatabaseReference UserDatabase = FirebaseDatabase.getInstance().getReference();
+    private String Username;
 
-    public ColorListAdapter(Context context, ArrayList<MoodAndColor> list) {
+    public ColorListAdapter(Context context, ArrayList<MoodAndColor> list, String IntentUsername) {
         super(context, 0 , list);
         Context = context;
         MoodList = list;
+        Username = IntentUsername;
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View ConvertView, @NonNull ViewGroup parent) {
-        View ListItem = LayoutInflater.from(Context).inflate(layout.colorlist, parent, false);
-        ImageView OctoImageView = (ImageView) ListItem.findViewById(id.OctoImageView);
-        OctoImageView.setImageResource(drawable.topleft);
-
-        TextView MoodName = (TextView) ListItem.findViewById(id.MoodName);
+    public View getView(int Position, @Nullable View ConvertView, @NonNull ViewGroup parent) {
         MoodAndColor MoodAndColor = new MoodAndColor(0, null);
-        MoodName.setText(MoodAndColor.Moods[position]);
+        View ListItem = LayoutInflater.from(Context).inflate(layout.colorlist, parent, false);
 
+        MoodAndColor.SetColorDictionary();
+
+        SetUpHeaderImage(ListItem, MoodAndColor, "White");
+        SetTitleText(ListItem, MoodAndColor, Position);
+        SetSpinner(ListItem, MoodAndColor, Position);
+        System.out.println(Username);
+        return ListItem;
+    }
+
+    /**
+     * @param ListItem
+     * @param MoodAndColor
+     * <p>Sets header image</p>
+     */
+    private void SetUpHeaderImage(View ListItem, MoodAndColor MoodAndColor, String Color){
+        ImageView OctoImageView = ListItem.findViewById(id.OctoImageView);
+        OctoImageView.setImageResource(MoodAndColor.PictureList.get(Color));
+    }
+
+    /**
+     * @param ListItem
+     * @param MoodAndColor
+     * @param Position
+     * <p<>Sets the Title text on the card</p>
+     */
+    private void SetTitleText(View ListItem, MoodAndColor MoodAndColor, int Position){
+        TextView MoodName = (TextView) ListItem.findViewById(id.MoodName);
+        MoodName.setText(MoodAndColor.Moods[Position]);
+    }
+
+    /**
+     * @param ListItem
+     * @param MoodAndColor
+     * @param Position
+     * <p>Sets the spinner on the card with all of the different colors</p>
+     */
+    private void SetSpinner(View ListItem, MoodAndColor MoodAndColor, int Position){
         MoodAndColor.SetColorsArray();
 
         Spinner ColorSpinner = (Spinner) ListItem.findViewById(id.ColorSpinner);
         ArrayAdapter<String> ArrayAdapter = new ArrayAdapter<String>(Context, android.R.layout.simple_spinner_dropdown_item, MoodAndColor.Colors);
         ArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // attaching data adapter to spinner
         ColorSpinner.setAdapter(ArrayAdapter);
 
         ColorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String Item = parent.getItemAtPosition(position).toString();
-                Toast.makeText(Context, MoodName.getText().toString() + ": " + Item, Toast.LENGTH_SHORT).show();
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            public void onItemSelected(AdapterView<?> parent, View view, int ItemPosition, long id) {
+                String Item = parent.getItemAtPosition(ItemPosition).toString();
+                SignUp SignUp = new SignUp();
+                for (int i = 0; i < MoodAndColor.ColorsList.length; i++){
+                    if (Item == MoodAndColor.ColorsList[i]){
+                        UserDatabase.child(Username).child("Mood&Color").child(MoodAndColor.Moods[Position]).setValue(MoodAndColor.ColorsList[i]);
+                    }
+                }
+                SetUpHeaderImage(ListItem, MoodAndColor, Item);
                 ColorSpinner.setPrompt(Item);
-            } // to close the onItemSelected
+            }
+
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-        return ListItem;
     }
-
 
     @Override
     public int getCount() {
